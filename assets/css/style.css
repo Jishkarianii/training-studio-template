@@ -1,0 +1,724 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,900;1,700&display=swap');
+
+:root {
+    --main-white: #fff;
+    --main-orange: #ed563b;
+    --orange-hover: #f5674e;
+    --main-black: #232d39;
+    --main-blue: #007bff;
+    --banner-bg: #232D39CC;
+    --text-color: #7a7a7a;
+}
+
+/* ---- Load Animation ---- */
+
+#load {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-black);
+    z-index: 100;
+}
+
+.anim-cont {
+    display: flex;
+    justify-content: center;
+    width: 300px;
+}
+
+.anim-cont div {
+    width: 17px;
+    height: 17px;
+    margin: 8px;
+    border-radius: 50%;
+    background-color: var(--main-white);
+    animation: load-animation-right 4s infinite;
+}
+
+@keyframes load-animation-right {
+    0% {
+        transform: translateX(0px);
+    }
+    
+    50% {
+        transform: translateX(-25px);
+    }
+    
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+.anim-cont .anim-item {
+    animation: load-animation-left 4s infinite;
+}
+
+@keyframes load-animation-left {
+    0% {
+        transform: translateX(0px);
+    }
+    
+    50% {
+        transform: translateX(105px);
+    }
+    
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+/* ---- ANIMATED MENU ICON ---- */
+
+.menu-icon {
+    display:none;
+    flex-direction:column;
+    width:30px;
+    cursor:pointer;
+}
+   
+.menu-icon span {
+    background: var(--main-black);
+    border-radius:10px;
+    height:3px;
+    margin: 3px 0;
+    transition: .4s  cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+   
+span:nth-of-type(1) {
+    width:50%;
+}
+
+span:nth-of-type(2) {
+    width:100%;
+}
+
+span:nth-of-type(3) {
+    width:75%;
+}
+
+input[type="checkbox"] {
+    display:none;
+}
+   
+input[type="checkbox"]:checked ~ span:nth-of-type(1) {
+    transform-origin:bottom;
+    transform:rotatez(45deg) translate(4px,0px)
+}
+
+input[type="checkbox"]:checked ~ span:nth-of-type(2) {
+    transform-origin:top;
+    transform:rotatez(-45deg)
+}
+   
+input[type="checkbox"]:checked ~ span:nth-of-type(3) {
+    transform-origin:bottom;
+    width:50%;
+    transform: translate(14px,-4.3px) rotatez(45deg);
+}
+
+/* ---- END ---- */
+
+* {
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+*::selection {
+    color: white;
+    background-color: var(--main-orange);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+.btn-style {
+    padding: 11px 17px;
+    color: var(--main-white);
+    background-color: var(--main-orange);
+    font-size: 13px;
+    border: none;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.btn-style:hover {
+    background-color: var(--orange-hover);
+}
+
+header {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: var(--main-white);
+    background-color: rgba(250,250,250,0.1);
+    z-index: 10;
+}
+
+/* Add javascript class */
+.header-change {
+    position: fixed;
+    color: var(--main-black);
+    background-color: #f8f9fa;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.container h1 {
+    font-weight: 900;
+}
+
+.container h1 span {
+    color: var(--main-orange);
+}
+
+.a-color {
+    padding: 0 12px;
+    font-size: 13px;
+    font-weight: 100;
+    color: var(--main-white);
+    transition: 0.4s;
+}
+
+/* Add javascript class */
+.a-color-change {
+    color: var(--main-black);
+}
+
+/* Add javascript class */
+.a-color-hover {
+    color: var(--main-orange) !important;
+}
+
+.container nav a:hover {
+    color: var(--main-orange);
+}
+
+video {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+}
+
+#home {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--banner-bg);
+}
+
+#home .pos {
+    text-align: center;
+}
+
+#home .pos p {
+    color: var(--main-white);
+    font-size: 18px;
+    font-weight: 900;
+    margin: 0;
+}
+
+#home .pos h1 {
+    color: var(--main-white);
+    font-size: 84px;
+    font-weight: 900;
+    margin: 20px;
+}
+
+#home .pos span {
+    color: var(--main-orange);
+}
+
+#home .pos button {
+    font-size: 15px;
+}
+
+.section {
+    padding: 120px 20px;
+}
+
+.title {
+    text-align: center;
+}
+
+.title h2 {
+    font-size: 28px;
+    color: var(--main-black);
+}
+
+.title span {
+    color: var(--main-orange);
+}
+
+.title p {
+    margin: 20px auto;
+    max-width: 600px;
+    font-size: 14px;
+    line-height: 25px;
+    color: var(--text-color);
+}
+
+.grid-container {
+    padding-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: center;
+}
+
+.grid-container .card {
+    display: flex;
+    width: 480px;
+    padding: 10px;
+}
+
+.grid-container .card .content {
+    padding-left: 30px;
+}
+
+.grid-container .card .content h4 {
+    margin: 0;
+    color: var(--main-black);
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.grid-container .card .content p {
+    margin: 0;
+    color: var(--text-color);
+    font-size: 14px;
+    line-height: 25px;
+}
+
+.grid-container .card .content a {
+    color: var(--main-orange);
+    font-size: 13px;
+}
+
+.grid-container .card .content p a {
+    color: var(--main-blue);
+    font-size: 14px;
+}
+
+.become-member {
+    text-align: center;
+    background-image: url("../img/bg/cta-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.become-member h1 {
+    margin: 0;
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--main-white);
+}
+
+.become-member h1 span {
+    color: var(--main-orange);
+}
+
+.become-member p {
+    margin: 10px auto;
+    max-width: 900px;
+    color: var(--main-white);
+    font-size: 16px;
+}
+
+.become-member button {
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.grid-container .option {
+    width: 400px;
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--main-black);
+}
+
+.grid-container .option div {
+    padding: 30px;
+    margin: 30px;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    transition: 0.4s;
+}
+
+.grid-container .option div img {
+    margin-right: 20px;
+}
+
+.grid-container .option input {
+    display: none;
+}
+
+.grid-container .option input:checked + div {
+    color: var(--main-orange);
+}
+
+.grid-container .option button {
+    width: calc(100% - 60px);
+    margin: 30px;
+    margin-top: 0;
+    padding: 20px 30px;
+    font-size: 19px;
+    border-radius: 5px;
+}
+
+.grid-container .content {
+    width: 600px;
+}
+
+.grid-container .content img {
+    width: 600px;
+    border-radius: 5px;
+}
+
+.grid-container .content h2 {
+    font-size: 23px;
+    font-weight: 700;
+    color: var(--main-black);
+}
+
+.grid-container .content p {
+    font-size: 14px;
+    line-height: 25px;
+    padding-bottom: 20px;
+    color: var(--text-color);
+}
+
+.grid-container .content button {
+    font-size: 15px;
+}
+
+#schedules {
+    background-image: url("../img/bg/schedule-bg.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#schedules .title h2, #schedules .title p {
+    color: var(--main-white);
+}
+
+.option-week {
+    margin-top: 80px;
+    text-align: center;
+    color: var(--main-white);
+}
+
+.option-week label span {
+    margin: 0 5px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.option-week label span:hover {
+    color: var(--main-orange);
+}
+
+.option-week label input {
+    display: none;
+}
+
+.option-week label input:checked + span {
+    color: var(--main-orange);
+}
+
+.schedules-table {
+    width: 55vw;
+    margin: 0 auto;
+    margin-top: 40px;
+    border-collapse: collapse;
+}
+
+.schedules-table tr td {
+    padding: 40px 0;
+    text-align: center;
+    color: var(--main-white);
+    font-size: 13px;
+    border: 1px solid var(--main-white);
+    user-select: none;
+    transition: 0.4s;
+}
+
+.flex-container {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+.flex-container .card {
+    width: 260px;
+    margin: 20px;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.flex-container .card img {
+    width: 100%;
+}
+
+.flex-container .card div {
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.flex-container .card div span {
+    color: var(--main-orange);
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.flex-container .card h4 {
+    color: var(--main-black);
+    font-size: 19px;
+    margin: 0;
+}
+
+.flex-container .card p {
+    color: var(--text-color);
+    font-size: 14px;
+}
+
+.flex-container .card a {
+    color: var(--main-black);
+    margin-right: 10px;
+    transition: 0.4s;
+}
+
+.flex-container .card a:hover {
+    color: var(--main-orange);
+}
+
+#contact {
+    display: flex;
+}
+
+#gmap_canvas {
+    width: 100%;
+}
+
+#contact div {
+    width: 100%;
+}
+
+.message-box-conainer {
+    width: calc(50% - 160px);
+    padding: 80px;
+    background-image: url("../img/bg/contact-bg.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.message-box-conainer form {
+    padding: 40px;
+    background-color: var(--main-white);
+    border-radius: 5px;
+}
+
+.message-box-conainer form section input, .message-box-conainer form section textarea {
+    padding: 10px;
+    width: calc(100% - 20px);
+    border: 1px solid #ddd;
+    color: var(--text-color);
+    font-size: 13px;
+    outline: none;
+    resize: none;
+}
+
+.message-box-conainer form section {
+    margin-bottom: 30px;
+}
+
+
+.form-inp-sect {
+    display: flex;
+}
+
+.name-inp {
+    margin-right: 30px;
+}
+
+footer {
+    padding: 30px 0;
+    font-size: 13px;
+    text-align: center;
+    color: var(--main-black);
+}
+
+footer a {
+    color: var(--main-orange);
+}
+
+@media (max-width: 768px) {
+
+    header {
+        position: fixed;
+        color: var(--main-black);
+        background-color: #f7f7f7;
+    }
+    
+    .container {
+        display: block;
+    }
+
+    .container div {
+        background-color: #f7f7f7 ;
+    }
+    
+    .container nav {
+        position: fixed;
+        display: grid;
+        text-align: center;
+        width: calc(100% - 40px);
+        margin: 0 20px;
+        background-color: #f7f7f7;
+        margin-top: -400px;
+        transition: 0.4s;
+        z-index: -1;
+    }
+    
+    .a-color {
+        padding: 15px 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        color: var(--main-black);
+    }
+    
+    .container nav button {
+        width: 100%;
+        padding: 15px 0;
+        border-bottom: 1px solid #f7f7f7;
+    }
+
+    .menu-icon {
+        display: flex;
+    }
+
+    .grid-container {
+        width: 100%;
+        display: grid;
+        grid-template-columns: auto;
+        padding: 0;
+        margin: 0;
+    }
+
+    .grid-container .option {
+        width: 100%;
+    }
+    
+    .grid-container .option div {
+        margin: 0;
+        margin-bottom: 30px;
+        width: calc(100% - 60px);
+    }
+    
+    .grid-container .option button {
+        margin: 0;
+        margin-bottom: 30px;
+        width: 100%;
+    }
+    
+    .schedules-table {
+        width: 100%;
+    }
+
+    .flex-container {
+        display: block;
+    }
+
+    .flex-container .card {
+        width: calc(100% - 80px);
+        margin: 20px 0;
+    }
+
+    #contact {
+        display: block;
+    }
+
+    #contact .message-box-conainer {
+        width: calc(100% - 160px);
+    }
+
+    .grid-container .content {
+        width: 100%;
+    }
+
+    .grid-container .card {
+        width: calc(100% - 20px);
+    }
+
+    #img {
+        width: 100%;
+    }
+}
+
+@media (max-width: 425px) {
+    .container div {
+        font-size: 14px;
+    }
+
+    .container div i {
+        font-size: 25px;
+    }
+
+    #home .pos h1 {
+        font-size: 50px;
+    }
+
+    #contact .message-box-conainer {
+        width: calc(100% - 40px);
+        padding: 20px;
+    }
+
+    #contact .message-box-conainer form {
+        padding: 20px;
+    }
+
+    #contact .message-box-conainer section {
+        margin-bottom: 20px;
+    }
+
+    .form-inp-sect {
+        display: block;
+    }
+
+    .name-inp {
+        margin: 0;
+        margin-bottom: 20px;
+    }
+}
