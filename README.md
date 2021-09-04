@@ -1,2 +1,2 @@
 # training-studio-template
-hosted link: https://jishkarianii.github.io/training-studio-template/
+Live Demo: https://jishkarianii.github.io/training-studio-template/
